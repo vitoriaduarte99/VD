@@ -2481,6 +2481,18 @@ html:not(.floats-on):has(.hero) .reviews-float {
     grid-template-columns: 1fr;
   }
 
+  /* Centraliza o bloco na largura disponível, mantendo os parágrafos justificados. */
+  .atendimento__content {
+    width: 100%;
+    max-width: 54ch;
+    margin-inline: auto;
+  }
+
+  .atendimento .body-text {
+    margin-inline: auto;
+    text-align: justify;
+  }
+
   .servicos__grid {
     width: 100%;
     max-width: 360px;
