@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vitoriaduartearq.com/sitemap.xml
+Sitemap: https://www.vitoriaduartearq.com/sitemap.xml
