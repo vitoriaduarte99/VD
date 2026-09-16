@@ -2371,6 +2371,15 @@ html:not(.floats-on):has(.hero) .reviews-float {
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
+  /* Aproxima todo o conteúdo da capa principal da base da tela no mobile. */
+  .hero {
+    padding-bottom: 1.5rem;
+  }
+
+  .hero__content {
+    padding-bottom: 1.5rem;
+  }
+
   /* Centraliza os CTAs no mobile; apenas os botões da capa principal mantêm o alinhamento original. */
   main .btn {
     display: flex;
