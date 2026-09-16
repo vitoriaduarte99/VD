@@ -2397,11 +2397,11 @@ html:not(.floats-on):has(.hero) .reviews-float {
   }
 
   .hero__title {
-    font-size: clamp(2.05rem, 9.3vw, 2.4rem);
+    font-size: clamp(1.95rem, 8.6vw, 2.2rem);
   }
 
   .hero__subtitle {
-    font-size: 1.03rem;
+    font-size: 0.98rem;
   }
 
   /* Centraliza os CTAs no mobile; apenas os botões da capa principal mantêm o alinhamento original. */
@@ -2544,6 +2544,7 @@ html:not(.floats-on):has(.hero) .reviews-float {
 
   .projetos__grid {
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 1.75rem;
   }
 
   /* No celular, o bloco da arquiteta mostra o texto primeiro e a foto depois (igual ao do escritório) */
