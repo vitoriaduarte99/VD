@@ -2359,6 +2359,21 @@ html:not(.floats-on):has(.hero) .reviews-float {
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
+  /* Centraliza os CTAs no mobile; os botões das capas mantêm o alinhamento original. */
+  main .btn {
+    display: flex;
+    width: max-content;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .hero .btn,
+  .page-hero .btn {
+    display: inline-flex;
+    width: auto;
+    margin-inline: 0;
+  }
+
   .nav {
     position: fixed;
     inset: 0 0 0 30%;

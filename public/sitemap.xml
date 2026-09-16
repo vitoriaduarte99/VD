@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://vitoriaduartearq.com/</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <image:image><image:loc>https://vitoriaduartearq.com/img/vitoria-web/hero.jpg</image:loc></image:image>
     <image:image><image:loc>https://vitoriaduartearq.com/img/vitoria-web/sobre.jpg</image:loc></image:image>
     <image:image><image:loc>https://vitoriaduartearq.com/img/vitoria-web/projeto-01.jpg</image:loc></image:image>
@@ -13,14 +13,14 @@
   </url>
   <url>
     <loc>https://vitoriaduartearq.com/servicos/projeto-arquitetonico/</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-09-16</lastmod>
   </url>
   <url>
     <loc>https://vitoriaduartearq.com/servicos/projeto-de-interiores/</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-09-16</lastmod>
   </url>
   <url>
     <loc>https://vitoriaduartearq.com/servicos/acompanhamento-de-obra/</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-09-16</lastmod>
   </url>
 </urlset>
