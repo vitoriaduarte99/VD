@@ -548,6 +548,14 @@ section {
   -webkit-hyphens: auto;
 }
 
+/* Em monitores largos, acomoda a chamada da capa em aproximadamente duas linhas. */
+@media (min-width: 1200px) {
+  .hero__subtitle {
+    width: min(100%, 42rem);
+    font-size: 1rem;
+  }
+}
+
 .hero__actions {
   display: flex;
   gap: 1rem;
