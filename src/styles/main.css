@@ -67,6 +67,11 @@ body.nav-open {
   overflow: hidden;
 }
 
+body.nav-open .whatsapp-float,
+body.nav-open .reviews-float {
+  display: none;
+}
+
 /* Site-wide static pattern: fixed to the viewport so it never scrolls with the page */
 .page-pattern {
   position: fixed;
@@ -525,6 +530,10 @@ section {
 .hero__title em {
   font-style: italic;
   color: #fff;
+}
+
+.hero__title-line {
+  white-space: nowrap;
 }
 
 .hero__subtitle {
@@ -2385,6 +2394,14 @@ html:not(.floats-on):has(.hero) .reviews-float {
 
   .hero__content {
     padding-bottom: 1.5rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2.05rem, 9.3vw, 2.4rem);
+  }
+
+  .hero__subtitle {
+    font-size: 1.03rem;
   }
 
   /* Centraliza os CTAs no mobile; apenas os botões da capa principal mantêm o alinhamento original. */
