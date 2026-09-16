@@ -1562,6 +1562,13 @@ html:not(.floats-on):has(.hero) .reviews-float {
   border-radius: 14px;
 }
 
+/* Controle do modo espacial: circular e discretamente maior. */
+.lightbox__pano .pnlm-orientation-button {
+  border-radius: 50%;
+  transform: scale(1.16);
+  transform-origin: top left;
+}
+
 .lightbox__thumb--pano {
   position: relative;
 }
@@ -2505,7 +2512,12 @@ html:not(.floats-on):has(.hero) .reviews-float {
   .servicos__grid {
     width: 100%;
     max-width: 360px;
+    margin-top: 1.75rem;
     margin-inline: auto;
+  }
+
+  .diferenciais__title {
+    margin-bottom: 1.75rem;
   }
 
   /* Fotos mais compactas nos cards de serviço no celular. */
