@@ -63,6 +63,10 @@ body {
   overflow-x: hidden;
 }
 
+body.nav-open {
+  overflow: hidden;
+}
+
 /* Site-wide static pattern: fixed to the viewport so it never scrolls with the page */
 .page-pattern {
   position: fixed;
@@ -529,6 +533,9 @@ section {
   font-weight: 300;
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 2.5rem;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .hero__actions {
@@ -2192,6 +2199,11 @@ html:not(.floats-on):has(.hero) .reviews-float {
   margin-bottom: 2rem;
 }
 
+.page-hero .body-text strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
 .page-hero__media {
   border-radius: 20px;
   overflow: hidden;
@@ -2395,13 +2407,14 @@ html:not(.floats-on):has(.hero) .reviews-float {
 
   .nav {
     position: fixed;
-    inset: 0 0 0 30%;
+    inset: 0;
+    z-index: 110;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
-    background: var(--color-bg);
-    padding: 2rem var(--gutter);
+    background: #111;
+    padding: 6rem max(var(--gutter), 2rem) 3rem;
     transform: translateX(100%);
     transition: transform 0.5s var(--ease);
   }
@@ -2416,6 +2429,8 @@ html:not(.floats-on):has(.hero) .reviews-float {
 
   .nav-toggle {
     display: flex;
+    position: relative;
+    z-index: 120;
   }
 
   /* No menu mobile os serviços aparecem sempre abertos, abaixo de "Serviços" */
@@ -2508,19 +2523,14 @@ html:not(.floats-on):has(.hero) .reviews-float {
     grid-template-columns: 1fr;
   }
 
-  /* Reserva uma faixa abaixo da imagem para o indicador de rolagem. */
+  /* Espaço compacto depois da imagem nas capas internas. */
   .page-hero--cover {
-    padding-bottom: 8rem;
+    padding-bottom: 3rem;
   }
 
   .page-hero--cover .page-hero__media {
     width: min(310px, 100%);
     justify-self: center;
-  }
-
-  .page-hero--cover .scroll-cue {
-    bottom: 1.25rem;
-    height: 64px;
   }
 
   /* Rodapé no celular: marca em cima, Serviços e Escritório lado a lado, Contato embaixo */
