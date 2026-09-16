@@ -552,7 +552,7 @@ section {
 @media (min-width: 1200px) {
   .hero__subtitle {
     width: min(100%, 42rem);
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 }
 
@@ -2453,6 +2453,9 @@ html:not(.floats-on):has(.hero) .reviews-float {
     position: fixed;
     inset: 0;
     z-index: 110;
+    width: 100vw;
+    min-height: 100vh;
+    min-height: 100dvh;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -2460,11 +2463,23 @@ html:not(.floats-on):has(.hero) .reviews-float {
     background: #111;
     padding: 6rem max(var(--gutter), 2rem) 3rem;
     transform: translateX(100%);
-    transition: transform 0.5s var(--ease);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.5s var(--ease), visibility 0s linear 0.5s;
   }
 
   .nav.is-open {
     transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform 0.5s var(--ease), visibility 0s;
+  }
+
+  /* O backdrop-filter cria um contexto para elementos fixed em alguns celulares.
+     No mobile, o cabeçalho rolado usa fundo sólido para o painel ocupar a tela toda. */
+  .header.is-scrolled {
+    background: #111;
+    backdrop-filter: none;
   }
 
   .nav__link {
