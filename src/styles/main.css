@@ -2379,9 +2379,13 @@ html:not(.floats-on):has(.hero) .reviews-float {
     margin-inline: auto;
   }
 
-  .page-hero .section-title {
-    text-align: left;
-    margin-inline: 0;
+  /* Rótulos das seções e das páginas internas também ficam centralizados. */
+  main .eyebrow,
+  .page-hero .service-tag {
+    display: flex;
+    width: max-content;
+    max-width: 100%;
+    margin-inline: auto;
   }
 
   /* Nas capas internas, o CTA fica centralizado abaixo do texto. */
@@ -2507,6 +2511,11 @@ html:not(.floats-on):has(.hero) .reviews-float {
   /* Reserva uma faixa abaixo da imagem para o indicador de rolagem. */
   .page-hero--cover {
     padding-bottom: 8rem;
+  }
+
+  .page-hero--cover .page-hero__media {
+    width: min(310px, 100%);
+    justify-self: center;
   }
 
   .page-hero--cover .scroll-cue {
