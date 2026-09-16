@@ -142,7 +142,12 @@ async function showPano(item) {
     type: "equirectangular",
     panorama: item.src,
     autoLoad: true,
-    showControls: false,
+    // Exibe apenas o controle de orientação nos celulares compatíveis.
+    // O toque no botão também permite ao iPhone solicitar acesso ao giroscópio.
+    showControls: true,
+    showZoomCtrl: false,
+    showFullscreenCtrl: false,
+    orientationOnByDefault: false,
     compass: false,
     // campo de visão menor em telas estreitas, para não distorcer
     hfov: window.innerWidth < 700 ? 70 : 100,
