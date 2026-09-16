@@ -199,7 +199,7 @@ section {
   align-items: center;
   justify-content: center;
   clip-path: inset(0 0 0 0);
-  transition: clip-path 1.1s var(--ease-curtain), visibility 0s linear 1.1s;
+  transition: clip-path 0.8s var(--ease-curtain), visibility 0s linear 0.8s;
 }
 
 .no-intro .loader {
@@ -211,7 +211,7 @@ section {
   flex-direction: column;
   align-items: center;
   gap: clamp(1.1rem, 2vw, 1.5rem);
-  transition: opacity 0.6s var(--ease), transform 1.1s var(--ease-curtain);
+  transition: opacity 0.4s var(--ease), transform 0.8s var(--ease-curtain);
 }
 
 .loader__mark,
@@ -241,7 +241,7 @@ section {
   opacity: 0;
   transform: translateY(10px);
   filter: brightness(0) invert(1) blur(6px);
-  animation: loaderWord 1s var(--ease) 0.85s forwards;
+  animation: loaderWord 0.85s var(--ease) 0.75s forwards;
 }
 
 @keyframes loaderDraw {
@@ -2359,7 +2359,7 @@ html:not(.floats-on):has(.hero) .reviews-float {
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
-  /* Centraliza os CTAs no mobile; os botões das capas mantêm o alinhamento original. */
+  /* Centraliza os CTAs no mobile; apenas os botões da capa principal mantêm o alinhamento original. */
   main .btn {
     display: flex;
     width: max-content;
@@ -2367,11 +2367,26 @@ html:not(.floats-on):has(.hero) .reviews-float {
     margin-inline: auto;
   }
 
-  .hero .btn,
-  .page-hero .btn {
+  .hero .btn {
     display: inline-flex;
     width: auto;
     margin-inline: 0;
+  }
+
+  /* Centraliza os títulos das seções, preservando os títulos das capas. */
+  main .section-title {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .page-hero .section-title {
+    text-align: left;
+    margin-inline: 0;
+  }
+
+  /* Nas capas internas, o CTA fica centralizado abaixo do texto. */
+  .page-hero .hero__actions {
+    justify-content: center;
   }
 
   .nav {
@@ -2447,6 +2462,17 @@ html:not(.floats-on):has(.hero) .reviews-float {
     grid-template-columns: 1fr;
   }
 
+  .servicos__grid {
+    width: 100%;
+    max-width: 360px;
+    margin-inline: auto;
+  }
+
+  /* Fotos mais compactas nos cards de serviço no celular. */
+  .servico-card__media {
+    aspect-ratio: 4 / 3;
+  }
+
   .projetos__grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2476,6 +2502,16 @@ html:not(.floats-on):has(.hero) .reviews-float {
   .feature-list,
   .processo__grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Reserva uma faixa abaixo da imagem para o indicador de rolagem. */
+  .page-hero--cover {
+    padding-bottom: 8rem;
+  }
+
+  .page-hero--cover .scroll-cue {
+    bottom: 1.25rem;
+    height: 64px;
   }
 
   /* Rodapé no celular: marca em cima, Serviços e Escritório lado a lado, Contato embaixo */
@@ -2553,6 +2589,6 @@ html:not(.floats-on):has(.hero) .reviews-float {
 @media (max-width: 900px) {
   .outros-servicos__grid {
     grid-template-columns: 1fr;
-    max-width: 420px;
+    max-width: 360px;
   }
 }

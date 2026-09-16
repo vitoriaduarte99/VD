@@ -10,7 +10,7 @@ if (isReload || !location.hash) window.scrollTo({ top: 0, left: 0, behavior: "in
 // Abertura: não espera imagens e vídeo carregarem, dura um tempo fixo e curto
 const loader = document.getElementById("loader");
 const hasIntro = loader && !document.documentElement.classList.contains("no-intro");
-const INTRO_MS = 1900;
+const INTRO_MS = 1700;
 
 if (hasIntro) {
   document.body.style.overflow = "hidden";
