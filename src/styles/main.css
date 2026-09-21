@@ -906,10 +906,17 @@ section {
   font-weight: 600;
 }
 
+/* Mapa com tamanho fixo (mesma altura do título + texto ao lado); só encolhe em telas estreitas */
+.atendimento__mapa {
+  width: 480px;
+  max-width: 100%;
+  justify-self: end;
+}
+
 /* Ilustração da seção Atendimento: mapa com Belém pulsando */
 .alcance {
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 3;
   background: var(--color-surface);
   border-radius: 28px;
   overflow: hidden;
@@ -1029,6 +1036,34 @@ section {
 .atendimento .btn--primary:hover {
   background: var(--color-accent);
   color: var(--color-invert-ink);
+}
+
+/* Quando não cabe texto (mín. ~440px) + mapa (480px fixos) lado a lado, o mapa desce
+   para baixo do texto, centralizado. Decide pela largura real do conteúdo, não da tela. */
+.atendimento > .container {
+  container-type: inline-size;
+}
+
+@container (max-width: 1000px) {
+  .atendimento__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Centraliza o bloco na largura disponível, mantendo os parágrafos justificados. */
+  .atendimento__content {
+    width: 100%;
+    max-width: 54ch;
+    margin-inline: auto;
+  }
+
+  .atendimento__mapa {
+    justify-self: center;
+  }
+
+  .atendimento .body-text {
+    margin-inline: 0;
+    text-align: justify;
+  }
 }
 
 .btn--icon {
@@ -2578,22 +2613,9 @@ html:not(.floats-on):has(.hero) .reviews-float {
 
   .sobre__inner,
   .servicos__grid,
-  .atendimento__grid,
   .diferenciais__grid,
   .destaque__grid {
     grid-template-columns: 1fr;
-  }
-
-  /* Centraliza o bloco na largura disponível, mantendo os parágrafos justificados. */
-  .atendimento__content {
-    width: 100%;
-    max-width: 54ch;
-    margin-inline: auto;
-  }
-
-  .atendimento .body-text {
-    margin-inline: auto;
-    text-align: justify;
   }
 
   .servicos__grid {
