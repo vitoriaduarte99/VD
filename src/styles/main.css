@@ -906,7 +906,7 @@ section {
   font-weight: 600;
 }
 
-/* Ilustração "raio de alcance": Belém pulsando no centro, ligações para o país */
+/* Ilustração da seção Atendimento: mapa com Belém pulsando */
 .alcance {
   position: relative;
   aspect-ratio: 1;
@@ -921,9 +921,6 @@ section {
   height: 100%;
 }
 
-.alcance__rings { stroke: rgba(255, 255, 255, 0.08); }
-.alcance__core { fill: rgba(255, 255, 255, 0.06); }
-.alcance__nodes { fill: rgba(255, 255, 255, 0.55); }
 .alcance__center { fill: #fff; }
 
 .alcance__label {
@@ -931,12 +928,6 @@ section {
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 500;
-}
-
-.alcance__flow {
-  stroke: rgba(255, 255, 255, 0.3);
-  stroke-dasharray: 4 4;
-  animation: alcanceFlow 1.6s linear infinite;
 }
 
 .alcance__pulse {
@@ -960,6 +951,59 @@ section {
   animation-delay: 1.3s;
 }
 
+/* Link para o perfil no Google, abaixo do mapa (azul claro, legível no fundo grafite) */
+.atendimento__maps {
+  display: inline-block;
+  margin-top: 0.9rem;
+  color: #8ab4f8;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.atendimento__maps:hover {
+  color: #aecbfa;
+}
+
+/* Mapa das áreas atendidas: baía e rio ao fundo, área tracejada como no Google */
+.mapa__water { fill: rgba(255, 255, 255, 0.04); }
+
+.mapa__river {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.04);
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+.mapa__area {
+  fill: rgba(255, 255, 255, 0.05);
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-dasharray: 4 4;
+  stroke-linejoin: round;
+}
+
+.mapa__route {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.3);
+  stroke-dasharray: 4 4;
+  animation: alcanceFlow 1.6s linear infinite;
+}
+
+.mapa__cities { fill: rgba(255, 255, 255, 0.7); }
+
+.mapa__labels {
+  fill: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-body);
+  font-size: 12px;
+}
+
+.mapa__note {
+  fill: rgba(255, 255, 255, 0.45);
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
 @keyframes alcanceFlow {
   to { stroke-dashoffset: -32; }
 }
@@ -970,7 +1014,7 @@ section {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .alcance__flow,
+  .mapa__route,
   .alcance__pulse {
     animation: none;
   }
