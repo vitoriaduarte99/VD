@@ -50,6 +50,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Nada pode vazar para os lados: sem scroll horizontal nem "zoom out" no celular */
+  overflow-x: clip;
 }
 
 /* Fundo das faixas de marca d'água: cinza bem claro (as seções têm fundo próprio) */
@@ -60,7 +62,7 @@ body {
   font-weight: 300;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body.nav-open {
@@ -885,7 +887,7 @@ section {
 
 .atendimento__grid {
   display: grid;
-  grid-template-columns: 1fr 0.95fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
   gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
 }
@@ -1046,7 +1048,8 @@ section {
 
 @container (max-width: 1000px) {
   .atendimento__grid {
-    grid-template-columns: 1fr;
+    /* minmax(0, …): o mapa de 480px não pode alargar a coluna além da tela */
+    grid-template-columns: minmax(0, 1fr);
   }
 
   /* Centraliza o bloco na largura disponível, mantendo os parágrafos justificados. */
